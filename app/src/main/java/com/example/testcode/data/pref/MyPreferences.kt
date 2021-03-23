@@ -1,4 +1,4 @@
-package com.example.testcode.data
+package com.example.testcode.data.pref
 
 import android.content.Context
 import androidx.datastore.DataStore
@@ -6,7 +6,7 @@ import androidx.datastore.preferences.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class UserPreferences(
+class MyPreferences(
     context: Context
 ) {
     private val applicationContext = context.applicationContext

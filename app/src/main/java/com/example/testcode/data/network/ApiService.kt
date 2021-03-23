@@ -2,6 +2,7 @@ package com.example.testcode.data.network
 
 import com.example.testcode.data.model.ParentResponse
 import com.example.testcode.data.model.StudentResponse
+import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
@@ -12,7 +13,7 @@ interface ApiService {
     suspend fun loginParent(
         @Field("username") username: String,
         @Field("password") password: String,
-    ): ParentResponse
+    ): Response<ParentResponse>
 
     // Login as a student
     @FormUrlEncoded
@@ -20,12 +21,12 @@ interface ApiService {
     suspend fun loginStudent(
         @Field("username") username: String,
         @Field("password") password: String,
-    ): StudentResponse
+    ): Response<StudentResponse>
 
     // Login as a student from parent account
     @POST("login/student/{student-user-id}")
     suspend fun loginParentAsStudent(
         @Header("Authorization") auth: String,
         @Path("student-user-id") studentId: String,
-    ): StudentResponse
+    ): Response<StudentResponse>
 }

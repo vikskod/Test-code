@@ -1,4 +1,4 @@
-package com.example.testcode.data.network
+package com.example.testcode.util
 
 import okhttp3.ResponseBody
 
